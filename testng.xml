@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+<<<<<<< HEAD
 	<test name="chrometest">
 		<parameter name="browser" value="chrome" />
 
@@ -18,3 +19,15 @@
 
 </suite> <!--
 Suite -->
+=======
+  <test name="chrometest">
+	<parameter name="browser" value="chrome" />
+    <classes>
+      <class name="dsAlgo_Base.Base_class"/>
+      <class name="dsAlgo_TestClasses.Register_Test"/>
+      <class name="dsAlgo_TestClasses.Stack_Test"/>
+       <class name="dsAlgo_TestClasses.Queue_Test"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+>>>>>>> 6deb164 (added Register,Stack,Queue)

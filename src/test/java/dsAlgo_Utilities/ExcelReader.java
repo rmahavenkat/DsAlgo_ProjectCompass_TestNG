@@ -1,12 +1,10 @@
 package dsAlgo_Utilities;
 
 import java.io.File;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -15,12 +13,13 @@ import org.testng.annotations.DataProvider;
 public class ExcelReader {
 
 	private static final String path = System.getProperty("user.dir") + "/src/test/resources/Testdata.xlsx";
+
 	public static String[][] getdata(String sheetName, String testtype) throws IOException {
-		//String path = System.getProperty("user.dir") + "/src/test/resources/Testdata.xlsx";
+		// String path = System.getProperty("user.dir") +
+		// "/src/test/resources/Testdata.xlsx";
 		File excelFile = new File(path);
-		try(FileInputStream fis = new FileInputStream(excelFile);
-		 XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
-			
+		try (FileInputStream fis = new FileInputStream(excelFile); XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
+
 			XSSFSheet worksheet = workbook.getSheet(sheetName);
 			if (worksheet == null) {
 				throw new IllegalArgumentException("Sheet " + sheetName + " not found.");
@@ -31,11 +30,11 @@ public class ExcelReader {
 
 			List<String[]> list = new ArrayList<>();
 			DataFormatter df = new DataFormatter();
-			
+
 			for (int i = 1; i < noofRows; i++) {
 				String[] rowdata = new String[noofcolumns];
 				for (int j = 0; j < noofcolumns; j++) {
-					
+
 					rowdata[j] = df.formatCellValue(worksheet.getRow(i).getCell(j));
 				}
 				// check type column matches
@@ -49,14 +48,14 @@ public class ExcelReader {
 					}
 
 				}
-				//System.out.println();
+				// System.out.println();
 			}
-			//workbook.close();
-			//fis.close();
-			/*String[][] data = new String[list.size()][];
-			for (int i = 0; i < list.size(); i++) {
-				data[i] = list.get(i);
-			}*/
+			// workbook.close();
+			// fis.close();
+			/*
+			 * String[][] data = new String[list.size()][]; for (int i = 0; i < list.size();
+			 * i++) { data[i] = list.get(i); }
+			 */
 			return list.toArray(new String[0][0]);
 		}
 
@@ -101,6 +100,4 @@ public class ExcelReader {
 	public static Object[][] invalidpythonCode() throws IOException {
 		return getdata("pythonCode", "invalid");
 	}
-	}
-
-
+}

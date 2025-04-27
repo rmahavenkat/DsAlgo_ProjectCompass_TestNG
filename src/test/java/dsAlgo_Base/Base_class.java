@@ -35,5 +35,5 @@ public class Base_class {
 			driverfactory.quitDriver();
 		}
 	}
-
 }
+
