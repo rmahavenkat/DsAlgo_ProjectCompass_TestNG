@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite"  parallel="tests" thread-count="1">
-  <test thread-count="1" name="Test">
-  <parameter name="browser" value="chrome" />
-    <classes>
-      <class name="dsAlgo_TestClasses.Home_Test"/>
-      <class name="dsAlgo_TestClasses.Array_Test"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<suite name="Suite">
+	<listeners>
+		<listener class-name="dsAlgo_Utilities.ExtentReportListener" />
+		<listener
+			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+
+	</listeners>
+	<test name="chrometest">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="dsAlgo_TestClasses.Home_Test" />
+			<class name="dsAlgo_TestClasses.Array_Test" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

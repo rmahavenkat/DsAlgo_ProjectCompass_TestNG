@@ -83,14 +83,30 @@
 			<version>3.5.3</version>
 		</dependency>
 
+       <!-- https://mvnrepository.com/artifact/com.aventstack/chaintest-testng -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>chaintest-testng</artifactId>
+    <version>1.0.12</version>
+</dependency>
+<dependency>
 
-
-		<dependency>
 			<groupId>com.aventstack</groupId>
-			<artifactId>chaintest-cucumber-jvm</artifactId>
-			<version>1.0.12</version>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.29.1</version>
+</dependency>
 
-	</dependencies>
+  	<dependency>
+  		<groupId>DsAlgo_ProjectCompass_BDD</groupId>
+  		<artifactId>DSALgo_ProjectCompass_BDD</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 
 </project>

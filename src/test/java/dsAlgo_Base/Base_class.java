@@ -20,7 +20,8 @@ public class Base_class {
 		driverfactory.initdriver(browser);
 		LoggerReader.info("browser initialized");
 		LoggerReader.info("browser opened get driver");
-		driverfactory.getDriver().get(ConfigReader.getConfig("applicationurl"));
+		driver = driverfactory.getDriver();
+		driver.get(ConfigReader.getConfig("applicationurl"));
 	}
 	
 }

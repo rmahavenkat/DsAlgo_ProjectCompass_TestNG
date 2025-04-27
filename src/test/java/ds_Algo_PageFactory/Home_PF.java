@@ -13,6 +13,7 @@ import dsAlgo_DriverFactory.driverfactory;
 public class Home_PF {
 	WebDriver driver =  driverfactory.getDriver();
 	 public Home_PF() {
+		// this.driver = driver;
 		 PageFactory.initElements(driver, this);
 	 }
 
