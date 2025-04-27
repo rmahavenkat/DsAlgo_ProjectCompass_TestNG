@@ -15,8 +15,7 @@ public class ExcelReader {
 	private static final String path = System.getProperty("user.dir") + "/src/test/resources/Testdata.xlsx";
 
 	public static String[][] getdata(String sheetName, String testtype) throws IOException {
-		// String path = System.getProperty("user.dir") +
-		// "/src/test/resources/Testdata.xlsx";
+
 		File excelFile = new File(path);
 		try (FileInputStream fis = new FileInputStream(excelFile); XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
 

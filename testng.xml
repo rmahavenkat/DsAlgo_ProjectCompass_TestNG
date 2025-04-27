@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<test name="chrometest">
 		<parameter name="browser" value="chrome" />
 
@@ -20,6 +21,8 @@
 </suite> <!--
 Suite -->
 =======
+=======
+>>>>>>> 56a79c8 (added login,data structure,linked list,graph,tree)
   <test name="chrometest">
 	<parameter name="browser" value="chrome" />
     <classes>
@@ -30,4 +33,26 @@ Suite -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+<<<<<<< HEAD
 >>>>>>> 6deb164 (added Register,Stack,Queue)
+=======
+=======
+	<test name="chrometest">
+		<parameter name="browser" value="chrome" />
+
+		<classes>
+			<class name="dsAlgo_TestClasses.Login_Test" />
+			<class name="dsAlgo_TestClasses.DataStructure_Test" />
+			<class name="dsAlgo_TestClasses.Linkedlist_Test" />
+			<class name="dsAlgo_TestClasses.Graph_Test" />
+			<class name="dsAlgo_TestClasses.Tree_Test" />
+
+		</classes>
+	</test> <!--
+	Test -->
+
+
+</suite> <!--
+Suite -->
+>>>>>>> 877ddf0 (added login,data structure,linked list,graph,tree)
+>>>>>>> 56a79c8 (added login,data structure,linked list,graph,tree)
