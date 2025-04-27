@@ -3,10 +3,18 @@ package ds_Algo_PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class Home_PF extends BasePageFactory {
+import dsAlgo_DriverFactory.driverfactory;
+
+public class Home_PF {
+	WebDriver driver =  driverfactory.getDriver();
+	 public Home_PF() {
+		 PageFactory.initElements(driver, this);
+	 }
 
 	@FindBy(xpath = "//div[@class='content']/a/button[text()='Get Started']")
 	WebElement getstartedBtn;
@@ -22,8 +30,8 @@ public class Home_PF extends BasePageFactory {
 	
 	public void clickBtn() {
 		getstartedBtn.click();
-	}
-
+	} 
+	
 	public void clickdropdown() {
 		dropdownBtn.click();
 	}

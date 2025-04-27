@@ -1,10 +1,9 @@
 package dsAlgo_Utilities;
-import org.apache.logging.log4j.LogManager;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LoggerReader {
-
 	private static Logger logger = LogManager.getLogger();
 
 	public static void info(String message) {
@@ -26,5 +25,4 @@ public class LoggerReader {
 	public static void debug(String message) {
 		logger.debug(message);
 	}
-	
 }
