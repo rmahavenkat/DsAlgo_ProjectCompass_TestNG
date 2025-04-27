@@ -1,11 +1,26 @@
 package ds_Algo_PageFactory;
 
 import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class Login_PF extends BasePageFactory {
+import dsAlgo_DriverFactory.driverfactory;
+
+public class Login_PF {
+
+	WebDriver driver=driverfactory.getDriver();
+
+	public Login_PF() {
+		
+		PageFactory.initElements(driver, this);
+	}
+	 
 
 	@FindBy(linkText = "Sign in")
 	WebElement signin;
@@ -60,7 +75,6 @@ public class Login_PF extends BasePageFactory {
 
 		return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].validationMessage;", element);
 
-
 	}
 
 	// Method to get the error message when textbox left empty
@@ -79,8 +93,21 @@ public class Login_PF extends BasePageFactory {
 	}
 
 	// Method to get the login success message
-	public String loginSuccessMessage() {
+	/*public String loginSuccessMessage() {
+		try {
 		return successLoginMessage.getText();
+		}catch(StaleElementReferenceException e) {
+			
+		}
+	}*/
+	public String loginSuccessMessage() {
+	    try {
+	        return successLoginMessage.getText();
+	    } catch (StaleElementReferenceException e) {
+	        // Re-find the element manually
+	        WebElement refreshedElement = driver.findElement(By.xpath("//div[@class='alert alert-primary']"));
+	        return refreshedElement.getText();
+	    }
 	}
 
 	// Method to get verify logout button after signin
