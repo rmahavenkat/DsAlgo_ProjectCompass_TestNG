@@ -40,6 +40,7 @@ desktop.ini
 allure-results/
 Reports/
 test-output/
+Screenshots/
 
 #logs
 logs/

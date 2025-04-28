@@ -1,9 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>DsAlgo_ProjectCompass_TestNG</groupId>
-  <artifactId>DsAlgo_ProjectCompass_TestNG</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>DsAlgo_ProjectCompass_TestNG</groupId>
+	<artifactId>DsAlgo_ProjectCompass_TestNG</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
 
 		<!--https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -62,13 +64,6 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.4.0</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
-		<dependency>
-			<groupId>io.qameta.allure</groupId>
-			<artifactId>allure-cucumber7-jvm</artifactId>
-			<version>2.29.1</version>
-		</dependency>
 
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
@@ -88,8 +83,6 @@
 		</dependency>
 
 
-
-
 		<dependency>
 
 			<groupId>io.github.bonigarcia</groupId>
@@ -107,17 +100,21 @@
 		</dependency>
 
 
-		<!--
-		https://mvnrepository.com/artifact/com.aventstack/chaintest-cucumber-jvm -->
-
+		<!-- https://mvnrepository.com/artifact/com.aventstack/chaintest-testng -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
-			<artifactId>chaintest-cucumber-jvm</artifactId>
+			<artifactId>chaintest-testng</artifactId>
 			<version>1.0.12</version>
 		</dependency>
 
-	</dependencies>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.29.1</version>
+		</dependency>
 
+	</dependencies>
 
 
 </project>
