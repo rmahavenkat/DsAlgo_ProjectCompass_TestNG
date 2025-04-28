@@ -82,12 +82,42 @@ public class ExcelReader {
 
 	@DataProvider(name = "validregisterData")
 	public static Object[][] validregisterData() throws IOException {
-		return getdata("Register", "valid");
+		return getdata("Register", "validregister");
+	}
+
+	@DataProvider(name = "Emptypassword")
+	public static Object[][] enterusername() throws IOException {
+		return getdata("Register", "onlyusername");
+	}
+
+	@DataProvider(name = "Emptyusername")
+	public static Object[][] enterpassword() throws IOException {
+		return getdata("Register", "onlypassword");
+	}
+
+	@DataProvider(name = "Emptypasswordconfirm")
+	public static Object[][] enterpasswordconfirm() throws IOException {
+		return getdata("Register", "onlypasswordconfirm");
+	}
+
+	@DataProvider(name = "passwordandpwdconfirm")
+	public static Object[][] enterpasswordandpwdconfirm() throws IOException {
+		return getdata("Register", "onlypassandconfirm");
+	}
+
+	@DataProvider(name = "invalidpasswordconfirm")
+	public static Object[][] enterinvalidpwdconfirm() throws IOException {
+		return getdata("Register", "wrongpasswordconfirm");
+	}
+
+	@DataProvider(name = "numericpassword")
+	public static Object[][] enternumericpassword() throws IOException {
+		return getdata("Register", "invalidpassword");
 	}
 
 	@DataProvider(name = "invalidregisterData")
 	public static Object[][] invalidregisterData() throws IOException {
-		return getdata("Register", "invalid");
+		return getdata("Register", "usernamespace");
 	}
 
 	@DataProvider(name = "validpythonCode")

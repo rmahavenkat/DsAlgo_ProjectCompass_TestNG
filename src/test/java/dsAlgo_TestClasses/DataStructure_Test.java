@@ -3,6 +3,7 @@ package dsAlgo_TestClasses;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
+import org.testng.asserts.SoftAssert;
 import dsAlgo_Base.Base_class;
 import dsAlgo_Utilities.ConfigReader;
 import dsAlgo_Utilities.ExcelReader;
@@ -11,7 +12,7 @@ import ds_Algo_PageFactory.DataStructure_PF;
 public class DataStructure_Test extends Base_class {
 
 	DataStructure_PF datastruct;
-	Assertion assertion = new Assertion();
+	Assertion assertion = new SoftAssert();
 
 	@BeforeMethod
 	public void setUpPage() {
@@ -21,9 +22,9 @@ public class DataStructure_Test extends Base_class {
 	@Test(priority = 0, groups = "dsGroup", dependsOnGroups = "login", alwaysRun = true)
 	public void clickGetStart() {
 		datastruct.clickGetStartedButton();
-		/*String currenturl = driver.getCurrentUrl();
+		String currenturl = driver.getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("datastructpageurl");
-		assertion.assertEquals(currenturl, expectedurl);*/
+		assertion.assertEquals(currenturl, expectedurl);
 
 	}
 

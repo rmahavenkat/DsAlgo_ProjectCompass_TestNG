@@ -19,14 +19,14 @@ public class Register_Test extends Base_class {
 		register = new Register_PF();
 	}
 
-	@Test(priority = 0, groups = "register")
+	@Test(priority = 0, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 	public void register() {
 		register.clickRegister();
 		register.register1();
 		register.validationmessage();
 	}
 
-	@Test(priority = 1, dataProvider = "Emptypassword", dataProviderClass = ExcelReader.class, groups = "register")
+	@Test(priority = 1, dataProvider = "Emptypassword", dataProviderClass = ExcelReader.class, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 
 	public void testpasswordEmptyRegister(String username, String password, String Password1) {
 		register.setUserName(username);
@@ -43,7 +43,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 2, dataProvider = "Emptyusername", dataProviderClass = ExcelReader.class, groups = "register")
+	@Test(priority = 2, dataProvider = "Emptyusername", dataProviderClass = ExcelReader.class, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 
 	public void testonlypasswordRegister(String username, String password, String Password1) {
 		register.clearusername();
@@ -61,7 +61,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 3, dataProvider = "Emptypasswordconfirm", dataProviderClass = ExcelReader.class, groups = "register")
+	@Test(priority = 3, dataProvider = "Emptypasswordconfirm", dataProviderClass = ExcelReader.class, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 
 	public void testonlypasswordconfirmRegister(String username, String password, String Password1) {
 		register.clearusername();
@@ -80,7 +80,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 4, dataProvider = "passwordandpwdconfirm", dataProviderClass = ExcelReader.class, groups = "register")
+	@Test(priority = 4, dataProvider = "passwordandpwdconfirm", dataProviderClass = ExcelReader.class, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 
 	public void testonlypasswordandconfirmRegister(String username, String password, String Password1) {
 		register.clearusername();
@@ -100,7 +100,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 5, dataProvider = "invalidpasswordconfirm", dataProviderClass = ExcelReader.class, groups = "register")
+	@Test(priority = 5, dataProvider = "invalidpasswordconfirm", dataProviderClass = ExcelReader.class, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 
 	public void testinvalidpasswordconfirmRegister(String username, String password, String Password1) {
 
@@ -118,7 +118,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 6, dataProvider = "numericpassword", dataProviderClass = ExcelReader.class)
+	@Test(priority = 6, dataProvider = "numericpassword", dataProviderClass = ExcelReader.class,dependsOnGroups = "home",alwaysRun=true)
 
 	public void testnumericpasswordRegister(String username, String password, String Password1) {
 
@@ -136,7 +136,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 7, dataProvider = "invalidregisterData", dataProviderClass = ExcelReader.class)
+	@Test(priority = 7, dataProvider = "invalidregisterData", dataProviderClass = ExcelReader.class,dependsOnGroups = "home",alwaysRun=true)
 
 	public void testusernamewithspaceRegister(String username, String password, String Password1) {
 
@@ -154,7 +154,7 @@ public class Register_Test extends Base_class {
 
 	}
 
-	@Test(priority = 8, dataProvider = "validregisterData", dataProviderClass = ExcelReader.class, groups = "register")
+	@Test(priority = 8, dataProvider = "validregisterData", dataProviderClass = ExcelReader.class, groups = "register",dependsOnGroups = "home",alwaysRun=true)
 
 	public void testvalidRegister(String username, String password, String Password1) {
 

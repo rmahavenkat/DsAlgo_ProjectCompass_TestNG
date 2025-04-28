@@ -23,15 +23,13 @@ public class Base_class {
 		LoggerReader.info("browser initialized");
 		LoggerReader.info("browser opened get driver");
 		driver = driverfactory.getDriver();
-		driver.get(ConfigReader.getConfig("homepageurl"));
+		driver.get(ConfigReader.getConfig("applicationurl"));
 	}
 
 	@AfterTest
 	public static void teardown() throws Throwable {
 		if (driver != null) {
-
 			LoggerReader.info("Closing browser after all tests");
-			// driverfactory.getDriver().close();
 			driverfactory.quitDriver();
 		}
 	}

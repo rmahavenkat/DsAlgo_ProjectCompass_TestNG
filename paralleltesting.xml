@@ -4,11 +4,14 @@
 	<test name="chrometest">
 		<parameter name="browser" value="chrome" />
 		<classes>
+			<class name="dsAlgo_TestClasses.Register_Test" />
 			<class name="dsAlgo_TestClasses.Login_Test" />
 			<class name="dsAlgo_TestClasses.DataStructure_Test" />
 			<class name="dsAlgo_TestClasses.Linkedlist_Test" />
 			<class name="dsAlgo_TestClasses.Graph_Test" />
 			<class name="dsAlgo_TestClasses.Tree_Test" />
+			<class name="dsAlgo_TestClasses.Stack_Test" />
+			<class name="dsAlgo_TestClasses.Queue_Test" />
 
 
 		</classes>
@@ -17,11 +20,14 @@
 	<test name="edgetest">
 		<parameter name="browser" value="edge" />
 		<classes>
+			<class name="dsAlgo_TestClasses.Register_Test" />
 			<class name="dsAlgo_TestClasses.Login_Test" />
 			<class name="dsAlgo_TestClasses.DataStructure_Test" />
 			<class name="dsAlgo_TestClasses.Linkedlist_Test" />
 			<class name="dsAlgo_TestClasses.Graph_Test" />
 			<class name="dsAlgo_TestClasses.Tree_Test" />
+			<class name="dsAlgo_TestClasses.Stack_Test" />
+			<class name="dsAlgo_TestClasses.Queue_Test" />
 
 		</classes>
 	</test> <!--
@@ -29,11 +35,14 @@
 	<test name="firefoxtest">
 		<parameter name="browser" value="firefox" />
 		<classes>
+			<class name="dsAlgo_TestClasses.Register_Test" />
 			<class name="dsAlgo_TestClasses.Login_Test" />
 			<class name="dsAlgo_TestClasses.DataStructure_Test" />
 			<class name="dsAlgo_TestClasses.Linkedlist_Test" />
 			<class name="dsAlgo_TestClasses.Graph_Test" />
 			<class name="dsAlgo_TestClasses.Tree_Test" />
+			<class name="dsAlgo_TestClasses.Stack_Test" />
+			<class name="dsAlgo_TestClasses.Queue_Test" />
 
 		</classes>
 	</test> <!--
