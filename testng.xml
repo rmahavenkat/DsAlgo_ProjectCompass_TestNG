@@ -6,6 +6,9 @@
 		<listener class-name="dsAlgo_Utilities.ExtentReportListener" />
 		<listener
 			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+		<listener
+			class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter" />
+
 	</listeners>
 	<test name="chrometest">
 		<parameter name="browser" value="chrome" />
