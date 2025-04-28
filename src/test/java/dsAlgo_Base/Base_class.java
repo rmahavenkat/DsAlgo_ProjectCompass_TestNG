@@ -3,6 +3,7 @@ package dsAlgo_Base;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import dsAlgo_DriverFactory.driverfactory;
 import dsAlgo_Utilities.ConfigReader;
@@ -14,7 +15,7 @@ public class Base_class {
 
 	@BeforeTest
 	@Parameters({ "browser" })
-	public void setupAll(String browser) throws Throwable {
+	public void setupAll(@Optional("chrome")String browser) throws Throwable {
 		LoggerReader.info("browser opened");
 		ConfigReader.setBrowserType(browser);
 		ConfigReader.loadConfig();
@@ -27,7 +28,7 @@ public class Base_class {
 	}
 
 	@AfterTest
-	public static void teardown() throws Throwable {
+	public  void teardown() throws Throwable {
 		if (driver != null) {
 			LoggerReader.info("Closing browser after all tests");
 			driverfactory.quitDriver();
