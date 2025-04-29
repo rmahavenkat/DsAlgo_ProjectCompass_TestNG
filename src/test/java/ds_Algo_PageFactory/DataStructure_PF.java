@@ -2,10 +2,21 @@ package ds_Algo_PageFactory;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class DataStructure_PF extends BasePageFactory {
+import dsAlgo_DriverFactory.driverfactory;
+import dsAlgo_Utilities.ConfigReader;
+
+public class DataStructure_PF {
+
+	WebDriver driver = driverfactory.getDriver();
+
+	public DataStructure_PF() {
+		PageFactory.initElements(driver, this);
+	}
 
 	@FindBy(xpath = "//*[text()='Data Structures-Introduction']/../a")
 	WebElement getstartedbutton;
@@ -56,12 +67,21 @@ public class DataStructure_PF extends BasePageFactory {
 			System.out.println(alerttext);
 			confirmation.accept();
 		} catch (NoAlertPresentException e) {
-			// No alert
+			System.out.println("Bug:user should be able to see an alert messge but showing No alert");
 		}
 	}
 
 	public void getOutputText() {
 		System.out.println(output.getText());
+	}
+
+	public void navigateBack() {
+		driver.navigate().back();
+	}
+
+	public void homeurl() {
+		String url = ConfigReader.getConfig("homepageurl");
+		driver.navigate().to(url);
 	}
 
 }

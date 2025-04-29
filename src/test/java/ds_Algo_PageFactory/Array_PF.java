@@ -3,13 +3,21 @@ package ds_Algo_PageFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.asserts.Assertion;
+import org.openqa.selenium.support.PageFactory;
 
-public class Array_PF extends BasePageFactory {
+import dsAlgo_DriverFactory.driverfactory;
 
-	@FindBy(xpath = "//a[normalize-space()='Sign in']")
+public class Array_PF {
+	WebDriver driver = driverfactory.getDriver();
+	 public Array_PF() {
+		// this.driver = driver;
+		 PageFactory.initElements(driver, this);
+	 }
+
+	@FindBy(linkText = "Sign in")
 	WebElement signBtn;
 	@FindBy(id = "id_username")
 	WebElement username;
@@ -17,7 +25,7 @@ public class Array_PF extends BasePageFactory {
 	WebElement password;
 	@FindBy(xpath = "//input[@value='Login']")
 	WebElement loginBtn;
-	@FindBy(xpath = "//a[@href='array']")
+	@FindBy(xpath = "//a[@href='array' and text()='Get Started']")
 	WebElement A_getstartedBtn;
 	@FindBy(xpath = "//a[contains(text(),'Data')]")
 	WebElement dropdown;
@@ -25,20 +33,24 @@ public class Array_PF extends BasePageFactory {
 	WebElement arrays;
 	@FindBy(xpath = "//a[normalize-space()='Arrays in Python']")
 	WebElement arrayInpython;
+	@FindBy(xpath = "//a[normalize-space()='Arrays Using List']")
+	WebElement arrayUsingList;
+	@FindBy(xpath = "//a[normalize-space()='Basic Operations in Lists']")
+	WebElement basicOperation;
+	@FindBy(xpath = "//a[normalize-space()='Applications of Array']")
+	WebElement applicationOfArray;
 	@FindBy(xpath = "//a[contains(@href, 'try')]")
 	WebElement arrayInpythonTryHere;
 	@FindBy(xpath = "//*[@id='answer_form']/button")
 	WebElement runBtn;
-	@FindBy(xpath = "//*[@id='answer_form']/div/div/div[1]/textarea")
-	WebElement invalidcodeEditor;
-	@FindBy(xpath = "//*[@id='answer_form']/div/div/div[1]/textarea")
-	WebElement validcodeEditor;
+	@FindBy(xpath = "//form[@id=\"answer_form\"]/div/div/div/textarea")
+	WebElement textboxInTryEditor; 
 	@FindBy(xpath = "//*[@id='answer_form']/input[2]")
 	WebElement submitBtn;
 	@FindBy(id = "output")
 	WebElement validoutputmsg;
-	@FindBy(xpath = "//a[@class='list-group-item list-group-item-light text-info']")
-	WebElement PracticeQBtn;
+	@FindBy(linkText = "Practice Questions")
+	WebElement practiceQuesButton;
 	@FindBy(xpath = "//*[@id='output']")
 	WebElement errorMsg;
 	@FindBy(xpath = "//a[@class='btn btn-info']")
@@ -85,6 +97,15 @@ public class Array_PF extends BasePageFactory {
 	public void clickArrayInpython() {
 		arrayInpython.click();
 	}
+	public void clickArrayUsingList() {
+		arrayUsingList.click();
+	}
+	public void clickBasicOperation() {
+		basicOperation.click();
+	}
+	public void clickAppOfArray() {
+		applicationOfArray.click();
+	}
 	public void clickArrayInpythonTryHere() {
 		arrayInpythonTryHere.click();
 
@@ -92,15 +113,9 @@ public class Array_PF extends BasePageFactory {
 	public void click_runBtn() {
 		runBtn.click();
 	}
-	public void enterinvalid(String code) {
-		invalidcodeEditor.sendKeys(code);
-	}
-	public void entervalid(String validMsg) {
-		validcodeEditor.sendKeys(validMsg);
-	}
-
-	@FindBy(xpath = "")
-	WebElement output;
+	public void enterText(String userTextfield) throws InterruptedException {
+		textboxInTryEditor.sendKeys(userTextfield);
+		} 
 
 	public void seeoutput() {
 		System.out.println(validoutputmsg.getText());
@@ -127,9 +142,9 @@ public class Array_PF extends BasePageFactory {
 	public String getoutput() {
 		return validoutputmsg.getText();
 	}
-	public void click_PracticeQBtn() {
-		PracticeQBtn.click();
-	}
+	public void clickPracticeQues() {
+		practiceQuesButton.click();
+		}
 	public String getErrorMsg() {
 		return errorMsg.getText();
 	}
@@ -160,45 +175,13 @@ public class Array_PF extends BasePageFactory {
 	public void clicksortedArray() {
 		sortedArray.click();
 	}
-	public void getSuccessMsg() {
-		successMsg.getText();
+	public String getSuccessMsg() {
+		return successMsg.getText();
 	}
 
 	public String getValidationMessage(WebElement element) {
 		return (String) ((org.openqa.selenium.JavascriptExecutor) driver)
 				.executeScript("return arguments[0].validationMessage;", element);
 	}
-	public void arrayPageurl(String string) {
-		String currenturl = driver.getCurrentUrl();
-		String url = "";
-		switch (string) {
-		case "Arrays in Python":
-			url = "arrays-in-python/";
-			break;
-		case "Arrays using list":
-			url = "arrays-using-list/";
-			break;
-		case "Basic operations in lists":
-			url = "basic-operations-in-lists/";
-			break;
-		case "Applications of array":
-			url = "applications-of-array/";
-			break;
-
-		case "Practice":
-			url = "practice";
-			break;
-		}
-		String Expectedurl = "https://dsportalapp.herokuapp.com/array/" + url;
-		if (url != Expectedurl) {
-			driver.navigate().to(Expectedurl);
-		}
-		currenturl = driver.getCurrentUrl();
-		Assertion assertion = new Assertion();
-		assertion.assertEquals(currenturl, Expectedurl);
-	}
 	
-	
-	
-
 }

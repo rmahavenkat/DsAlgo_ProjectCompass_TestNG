@@ -1,7 +1,7 @@
 <extentreports>
   <configuration>
     <theme>standard</theme> <!-- dark or standard -->
-    <documentTitle>Cucumber Test Report</documentTitle>
+    <documentTitle>TestNg Test Report</documentTitle>
     <reportName>Automation Execution Report</reportName>
     <encoding>utf-8</encoding>
     <timelineEnabled>true</timelineEnabled>

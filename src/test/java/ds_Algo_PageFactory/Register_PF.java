@@ -2,10 +2,20 @@ package ds_Algo_PageFactory;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class Register_PF extends BasePageFactory {
+import dsAlgo_DriverFactory.driverfactory;
+
+public class Register_PF {
+
+	WebDriver driver = driverfactory.getDriver();
+
+	public Register_PF() {
+		PageFactory.initElements(driver, this);
+	}
 
 	@FindBy(id = "id_username")
 	WebElement username;
@@ -27,7 +37,7 @@ public class Register_PF extends BasePageFactory {
 	WebElement logoutmessage;
 
 	// Going into the Register form
-	public void Register() {
+	public void clickRegister() {
 		register.click();
 	}
 
@@ -38,9 +48,11 @@ public class Register_PF extends BasePageFactory {
 	}
 
 	// Sending user name details from config properties
-	public void setUserName(String uname) {
+	public String setUserName(String uname) {
 
 		username.sendKeys(uname);
+		return uname;
+
 	}
 
 	// Clearing user name details
@@ -52,6 +64,11 @@ public class Register_PF extends BasePageFactory {
 	// Clearing password and password confirmation details
 	public void clearpwd() {
 		password.clear();
+
+	}
+
+	public void clearpwdconfirm() {
+
 		passwordconfirm.clear();
 
 	}
@@ -64,6 +81,25 @@ public class Register_PF extends BasePageFactory {
 		String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", inputField);
 		System.out.println("Validation Message: " + validationMessage); // Expected output: "Please fill out this
 																		// field."
+	}
+
+	public String getValidationMessage(WebElement element) {
+
+		return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].validationMessage;", element);
+
+	}
+
+	public WebElement getUsernameField() {
+		return username;
+	}
+
+	// Method to get the error message when textbox left empty
+	public WebElement getPasswordField() {
+		return password;
+	}
+
+	public WebElement getPasswordconfirmField() {
+		return passwordconfirm;
 	}
 
 	// Sending password details from config properties

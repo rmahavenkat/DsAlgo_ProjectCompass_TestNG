@@ -2,11 +2,20 @@ package ds_Algo_PageFactory;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.asserts.Assertion;
+import org.openqa.selenium.support.PageFactory;
+import dsAlgo_DriverFactory.driverfactory;
+import dsAlgo_Utilities.ConfigReader;
 
-public class Stack_PF extends BasePageFactory {
+public class Stack_PF {
+
+	WebDriver driver = driverfactory.getDriver();
+
+	public Stack_PF() {
+		PageFactory.initElements(driver, this);
+	}
 
 	@FindBy(xpath = "//a[contains(text(), 'Sign in')]")
 	WebElement signin;
@@ -49,22 +58,7 @@ public class Stack_PF extends BasePageFactory {
 		}
 	}
 
-	public void signin() {
-		signin.click();
-	}
-
-	public void setUserName(String uname) {
-		username.sendKeys(uname);
-	}
-
-	public void setPassword(String pwd) {
-		password.sendKeys(pwd);
-	}
-
-	public void login() {
-		login.click();
-	}
-
+	
 	public void clickdata() {
 		datastdrdown.click();
 	}
@@ -87,6 +81,12 @@ public class Stack_PF extends BasePageFactory {
 
 	public void practicequestionspage() {
 		practice.click();
+
+	}
+
+	public void application() {
+		String url = ConfigReader.getConfig("homepageurl");
+		driver.navigate().to(url);
 	}
 
 	public void tryeditorpage() {
@@ -105,30 +105,8 @@ public class Stack_PF extends BasePageFactory {
 		System.out.println(validoutputmsg.getText());
 	}
 
-	public void stackLinks(String string) {
-		String currenturl = driver.getCurrentUrl();
-		String url = "";
-		switch (string) {
-		case "Operations in Stack":
-			url = "operations-in-stack/";
-			break;
-		case "Implementation":
-			url = "implementation/";
-			break;
-		case "Applications":
-			url = "stack-applications/";
-			break;
-		case "Practice Questions":
-			url = "practice";
-			break;
-		}
-		String Expectedurl = "https://dsportalapp.herokuapp.com/stack/" + url;
-		if (url != Expectedurl) {
-			driver.navigate().to(Expectedurl);
-		}
-		currenturl = driver.getCurrentUrl();
-		Assertion assertion = new Assertion();
-		assertion.assertEquals(currenturl, Expectedurl);
+	public void navigateBack() {
+		driver.navigate().back();
 	}
 
 }

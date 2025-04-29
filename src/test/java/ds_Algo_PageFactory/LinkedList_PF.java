@@ -1,19 +1,37 @@
 package ds_Algo_PageFactory;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.Assertion;
 
-public class LinkedList_PF extends BasePageFactory {
+import dsAlgo_DriverFactory.driverfactory;
+import dsAlgo_Utilities.ConfigReader;
+
+public class LinkedList_PF {
+	WebDriver driver = driverfactory.getDriver();
+
+	public LinkedList_PF() {
+		PageFactory.initElements(driver, this);
+	}
 
 	@FindBy(xpath = "//div[@class='row row-cols-1 row-cols-md-3 g-4']/div[3]/div/div/a[text()='Get Started']")
 	WebElement getstartedbutton;
+	@FindBy(xpath = "//*[@id='output']")
+	WebElement output;
 	@FindBy(linkText = "Introduction")
 	WebElement introductionButton;
 	@FindBy(xpath = "//a[contains(text(), 'Practice Questions')]")
 	WebElement practiceQuestionsbutton;
 	@FindBy(linkText = "Try here>>>")
 	WebElement tryherebutton;
+	@FindBy(xpath = "//form[@id=\"answer_form\"]/div/div/div/textarea")
+	WebElement textboxInTryEditor;
+	@FindBy(xpath = "//*[text()='Run']")
+	WebElement runButton;
 	@FindBy(linkText = "Creating Linked LIst")
 	WebElement creatinglinkedlistButton;
 	@FindBy(linkText = "Types of Linked List")
@@ -26,9 +44,42 @@ public class LinkedList_PF extends BasePageFactory {
 	WebElement insertionButton;
 	@FindBy(linkText = "Deletion")
 	WebElement deletionButton;
+	
 
 	public void clickGetStartedButton() {
 		getstartedbutton.click();
+	}
+
+	public void getOutputText() {
+		System.out.println(output.getText());
+	}
+	public void clickRunButton() {
+		runButton.click();
+	}
+
+	public void enterText(String userTextfield) throws InterruptedException {
+		textboxInTryEditor.sendKeys(userTextfield);
+	}
+
+	public void alertmessage() {
+
+		try {
+			Alert confirmation = driver.switchTo().alert();
+			String alerttext = confirmation.getText();
+			System.out.println(alerttext);
+			confirmation.accept();
+		} catch (NoAlertPresentException e) {
+			System.out.println("Bug:user should be able to see an alert messge but showing No alert");
+		}
+	}
+
+	public void navigateBack() {
+		driver.navigate().back();
+	}
+
+	public void homeurl() {
+		String url = ConfigReader.getConfig("homepageurl");
+		driver.navigate().to(url);
 	}
 
 	public void clickIntroduction() {
