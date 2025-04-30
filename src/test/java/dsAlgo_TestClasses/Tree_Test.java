@@ -10,7 +10,7 @@ import dsAlgo_Utilities.ConfigReader;
 import dsAlgo_Utilities.ExcelReader;
 import ds_Algo_PageFactory.Tree_PF;
 
-@Test(groups = "tree", dependsOnGroups = "GraphGroup", alwaysRun = true)
+@Test(groups = "tree", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
 public class Tree_Test extends Base_class {
 
 	Tree_PF tree;
@@ -24,7 +24,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 0)
 	public void clickgetstartedbutton() {
 		tree.clickGetStartButton();
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("treepageurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 
@@ -33,7 +33,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 1)
 	public void clickOverviewOfTree() {
 		tree.clickthelink("Overview Of Tree");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("overviewpageurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 
@@ -78,7 +78,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 7)
 	public void clickTerminologies() {
 		tree.clickthelink("Terminologies");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("terminologies");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -113,7 +113,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 11)
 	public void clickTypesofTree() {
 		tree.clickthelink("Types Of Tree");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("typesoftree");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -149,7 +149,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 15)
 	public void clickTreeTraversal() {
 		tree.clickthelink("Tree Traversals");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("treeTraversal");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -185,7 +185,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 19)
 	public void clickTraversalIllustration() {
 		tree.clickthelink("Traversals-Illustration");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("traversal-Illustration");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -221,7 +221,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 23)
 	public void clickBinaryTrees() {
 		tree.clickthelink("Binary Trees");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("binarytrees");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -257,7 +257,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 27)
 	public void clickTypesOfBinaryTrees() {
 		tree.clickthelink("Types Of Binary Trees");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("typesofbinarytree");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -293,7 +293,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 31)
 	public void clickImplementationinpython() {
 		tree.clickthelink("Implementation in Python");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("implementationinpython");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -329,7 +329,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 31)
 	public void clickBinaryTreeTraversal() {
 		tree.clickthelink("Binary Tree Traversals");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("binarytreetraversal");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -365,7 +365,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 35)
 	public void clickImplementationOfBinaryTrees() {
 		tree.clickthelink("Implementation Of Binary Trees");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("implementationofbinarytree");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -401,7 +401,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 39)
 	public void clickApplicationOfBinaryTrees() {
 		tree.clickthelink("Applications Of Binary Trees");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("applicationofbinarytree");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -437,7 +437,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 43)
 	public void clickBinarySearchTrees() {
 		tree.clickthelink("Binary Search Trees");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("binarysearchtree");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();
@@ -473,7 +473,7 @@ public class Tree_Test extends Base_class {
 	@Test(priority = 47)
 	public void clickImplementationOfBST() {
 		tree.clickthelink("Implementation Of BST");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("implementationofBST");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		clicktryhere();

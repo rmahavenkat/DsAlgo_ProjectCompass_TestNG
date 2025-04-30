@@ -12,13 +12,13 @@ import dsAlgo_DriverFactory.driverfactory;
 import dsAlgo_Utilities.ConfigReader;
 
 public class LinkedList_PF {
-	WebDriver driver = driverfactory.getDriver();
+	
 
 	public LinkedList_PF() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driverfactory.getDriver(), this);
 	}
 
-	@FindBy(xpath = "//div[@class='row row-cols-1 row-cols-md-3 g-4']/div[3]/div/div/a[text()='Get Started']")
+	@FindBy(xpath = "//a[@href='linked-list' and text()='Get Started']")
 	WebElement getstartedbutton;
 	@FindBy(xpath = "//*[@id='output']")
 	WebElement output;
@@ -64,7 +64,7 @@ public class LinkedList_PF {
 	public void alertmessage() {
 
 		try {
-			Alert confirmation = driver.switchTo().alert();
+			Alert confirmation = driverfactory.getDriver().switchTo().alert();
 			String alerttext = confirmation.getText();
 			System.out.println(alerttext);
 			confirmation.accept();
@@ -74,12 +74,12 @@ public class LinkedList_PF {
 	}
 
 	public void navigateBack() {
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	public void homeurl() {
 		String url = ConfigReader.getConfig("homepageurl");
-		driver.navigate().to(url);
+		driverfactory.getDriver().navigate().to(url);
 	}
 
 	public void clickIntroduction() {
@@ -119,7 +119,7 @@ public class LinkedList_PF {
 	}
 
 	public void urlIterate(String string) {
-		String currenturl = driver.getCurrentUrl();
+		String currenturl = driverfactory.getDriver().getCurrentUrl();
 		System.out.println(currenturl);
 		String url = "";
 		switch (string) {
@@ -153,9 +153,9 @@ public class LinkedList_PF {
 		String Expectedurl = "https://dsportalapp.herokuapp.com/linked-list/" + url;
 
 		if (!currenturl.equals(Expectedurl)) {
-			driver.navigate().to(Expectedurl);
+			driverfactory.getDriver().navigate().to(Expectedurl);
 		}
-		currenturl = driver.getCurrentUrl();
+		currenturl = driverfactory.getDriver().getCurrentUrl();
 		Assertion assertion = new Assertion();
 		assertion.assertEquals(currenturl, Expectedurl);
 	}

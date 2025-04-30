@@ -7,11 +7,12 @@ import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
 import dsAlgo_Base.Base_class;
+import dsAlgo_DriverFactory.driverfactory;
 import dsAlgo_Utilities.ExcelReader;
 import dsAlgo_Utilities.LoggerReader;
 import ds_Algo_PageFactory.Array_PF;
 
-@Test(groups = "array", dependsOnGroups = "queue", alwaysRun = true)
+@Test(groups = "array", dependsOnGroups = "tree", alwaysRun = true)
 public class Array_Test extends Base_class {
 
 	Array_PF Array;
@@ -40,7 +41,7 @@ public class Array_Test extends Base_class {
 		Array.clickArrayInpythonTryHere();
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 4, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -49,7 +50,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(invalid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 5, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -59,7 +60,7 @@ public class Array_Test extends Base_class {
 		Array.click_runBtn();
 		Array.alertmessage();
 		Array.seeoutput();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 6)
@@ -73,7 +74,7 @@ public class Array_Test extends Base_class {
 		Array.clickArrayInpythonTryHere();
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 8, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -82,7 +83,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(invalid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 
 	}
 
@@ -92,7 +93,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(valid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 10)
@@ -106,7 +107,7 @@ public class Array_Test extends Base_class {
 		Array.clickArrayInpythonTryHere();
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 12, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -115,7 +116,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(invalid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 
 	}
 
@@ -125,7 +126,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(valid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 14)
@@ -139,7 +140,7 @@ public class Array_Test extends Base_class {
 		Array.clickArrayInpythonTryHere();
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 16, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -148,7 +149,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(invalid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 
 	}
 
@@ -158,7 +159,7 @@ public class Array_Test extends Base_class {
 		Array.enterText(valid);
 		Array.click_runBtn();
 		Array.alertmessage();
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 18, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -173,7 +174,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 19, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -188,7 +189,7 @@ public class Array_Test extends Base_class {
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
 
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 20, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -203,7 +204,7 @@ public class Array_Test extends Base_class {
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
 
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 21, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -218,7 +219,7 @@ public class Array_Test extends Base_class {
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
 
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 22, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -232,7 +233,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 23, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -246,7 +247,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 24, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -260,7 +261,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 25, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -274,12 +275,12 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 26, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
 	public void invalidSearcharray2(String invalid) throws InterruptedException {
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 		Array.clickArrayUsingList();
 		Array.clickPracticeQues();
 		Array.clickSearchTheArray();
@@ -291,7 +292,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 27, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -305,7 +306,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 28, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -319,7 +320,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 29, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -333,7 +334,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 30, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -347,7 +348,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 31, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -361,7 +362,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 32, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -375,7 +376,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 33, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -389,12 +390,12 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 34, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
 	public void invalidSearcharray3(String invalid) throws InterruptedException {
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 		Array.clickBasicOperation();
 		Array.clickPracticeQues();
 		Array.clickSearchTheArray();
@@ -406,7 +407,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 35, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -420,7 +421,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 36, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -434,7 +435,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 37, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -448,7 +449,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 38, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -462,7 +463,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 39, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -476,7 +477,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 40, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -490,7 +491,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 41, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -504,12 +505,12 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 42, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
 	public void invalidSearcharray4(String invalid) throws InterruptedException {
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 		Array.clickAppOfArray();
 		Array.clickPracticeQues();
 		Array.clickSearchTheArray();
@@ -521,7 +522,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 43, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -535,7 +536,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 44, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -549,7 +550,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 45, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -563,7 +564,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 46, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -577,7 +578,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 47, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -591,7 +592,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 48, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class)
@@ -605,7 +606,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getErrorMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	@Test(priority = 49, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class)
@@ -619,7 +620,7 @@ public class Array_Test extends Base_class {
 		String actualMsg = Array.getSuccessMsg();
 		String expectedMsg = "Submission successful";
 		assertion.assertEquals(actualMsg, expectedMsg);
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 }

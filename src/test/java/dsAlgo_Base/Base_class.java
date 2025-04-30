@@ -11,7 +11,7 @@ import dsAlgo_Utilities.LoggerReader;
 
 public class Base_class {
 
-	protected static WebDriver driver;
+	//protected static WebDriver driver;
 
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -19,17 +19,18 @@ public class Base_class {
 		LoggerReader.info("browser opened");
 		ConfigReader.setBrowserType(browser);
 		ConfigReader.loadConfig();
-		browser = ConfigReader.getBrowserType();
 		driverfactory.initdriver(browser);
 		LoggerReader.info("browser initialized");
-		LoggerReader.info("browser opened get driver");
-		driver = driverfactory.getDriver();
-		driver.get(ConfigReader.getConfig("applicationurl"));
+		driverfactory.getDriver().get(ConfigReader.getConfig("applicationurl"));
 	}
 
+	public static WebDriver driver() {
+		return driverfactory.getDriver();
+	}
+	
 	@AfterTest
 	public  void teardown() throws Throwable {
-		if (driver != null) {
+		if (driverfactory.getDriver() != null) {
 			LoggerReader.info("Closing browser after all tests");
 			driverfactory.quitDriver();
 		}

@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 import dsAlgo_Base.Base_class;
+import dsAlgo_DriverFactory.driverfactory;
 import dsAlgo_Utilities.ExcelReader;
 import ds_Algo_PageFactory.Queue_PF;
 
@@ -26,7 +27,7 @@ public class Queue_Test extends Base_class {
 	@Test(priority = 1)
 	public void clickimplementationofpython() {
 		queue.queueLinks("Implementation of Queue in Python");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("implementationofpythonurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 	}
@@ -34,7 +35,7 @@ public class Queue_Test extends Base_class {
 	@Test(priority = 2)
 	public void clicktryherelink() {
 		queue.tryeditorpage();
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("tryeditorpageurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 	}
@@ -71,7 +72,7 @@ public class Queue_Test extends Base_class {
 	@Test(priority = 6)
 	public void clickPracticequestion() {
 		queue.practicequestionspage();
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("queuepracticepageurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 		queue.navigateBack();
@@ -82,7 +83,7 @@ public class Queue_Test extends Base_class {
 	public void clickimplementationusingcollectionspage() {
 
 		queue.queueLinks("Implementation using collections.deque");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("implementationofcollectionsurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 	}
@@ -117,7 +118,7 @@ public class Queue_Test extends Base_class {
 	public void clickimplementationofarraypage() {
 
 		queue.queueLinks("Implementation using array");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("implementationofarraysurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 	}
@@ -154,7 +155,7 @@ public class Queue_Test extends Base_class {
 	public void clickQueueOperationspage() {
 
 		queue.queueLinks("Queue Operations");
-		/*String currenturl = driver.getCurrentUrl();
+		/*String currenturl = driverfactory.getDriver().getCurrentUrl();
 		String expectedurl = ConfigReader.getConfig("queueopeartionsurl");
 		assertion.assertEquals(currenturl, expectedurl);*/
 	}

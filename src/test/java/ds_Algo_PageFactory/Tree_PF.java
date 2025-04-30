@@ -13,13 +13,13 @@ import dsAlgo_DriverFactory.driverfactory;
 import dsAlgo_Utilities.ConfigReader;
 
 public class Tree_PF extends Base_class  {
-	WebDriver driver = driverfactory.getDriver();
+	
 
 	public Tree_PF() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driverfactory.getDriver(), this);
 	}
 
-	@FindBy(xpath = "//div[@class='row row-cols-1 row-cols-md-3 g-4']/div[6]/div/div/a[text()='Get Started']")
+	@FindBy(xpath = "//a[@href='tree' and text()='Get Started']")
 	WebElement getstartbutton;
 	@FindBy(linkText = "Overview of Trees")
 	WebElement overviewoftreeButton;
@@ -76,7 +76,7 @@ public class Tree_PF extends Base_class  {
 	public void alertmessage() {
 
 		try {
-			Alert confirmation = driver.switchTo().alert();
+			Alert confirmation = driverfactory.getDriver().switchTo().alert();
 			String alerttext = confirmation.getText();
 			System.out.println(alerttext);
 			confirmation.accept();
@@ -85,7 +85,7 @@ public class Tree_PF extends Base_class  {
 		}
 	}
 	public void navigateBack() {
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 	public void getOutputText() {
 		System.out.println(output.getText());
@@ -145,7 +145,7 @@ public class Tree_PF extends Base_class  {
 	}
 	public void homeurl() {
 		String url = ConfigReader.getConfig("homepageurl");
-		driver.navigate().to(url);
+		driverfactory.getDriver().navigate().to(url);
 	}
 
 	

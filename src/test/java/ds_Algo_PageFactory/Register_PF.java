@@ -11,10 +11,10 @@ import dsAlgo_DriverFactory.driverfactory;
 
 public class Register_PF {
 
-	WebDriver driver = driverfactory.getDriver();
+	
 
 	public Register_PF() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driverfactory.getDriver(), this);
 	}
 
 	@FindBy(id = "id_username")
@@ -75,9 +75,9 @@ public class Register_PF {
 
 	// Getting "Please fill out this field" message from
 	public void validationmessage() {
-		WebElement inputField = driver.findElement(By.cssSelector("input[required]"));
+		WebElement inputField = driverfactory.getDriver().findElement(By.cssSelector("input[required]"));
 		// Use JavaScript to get the validation message
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driverfactory.getDriver();
 		String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", inputField);
 		System.out.println("Validation Message: " + validationMessage); // Expected output: "Please fill out this
 																		// field."
@@ -85,7 +85,7 @@ public class Register_PF {
 
 	public String getValidationMessage(WebElement element) {
 
-		return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].validationMessage;", element);
+		return (String) ((JavascriptExecutor) driverfactory.getDriver()).executeScript("return arguments[0].validationMessage;", element);
 
 	}
 
