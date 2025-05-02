@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import dsAlgo_DriverFactory.driverfactory;
 
 public class Array_PF {
-	WebDriver driver = driverfactory.getDriver();
+	
 	 public Array_PF() {
-		// this.driver = driver;
-		 PageFactory.initElements(driver, this);
+	
+		 PageFactory.initElements(driverfactory.getDriver(), this);
 	 }
 
 	@FindBy(linkText = "Sign in")
@@ -122,7 +122,7 @@ public class Array_PF {
 	}
 
 	public void clearCodeEditor() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driverfactory.getDriver();
 		js.executeScript("document.querySelector('.CodeMirror').CodeMirror.setValue('');");
 	}
 	public void click_submitBtn() {
@@ -131,7 +131,7 @@ public class Array_PF {
 
 	public void alertmessage() {
 		try {
-			Alert confirmation = driver.switchTo().alert();
+			Alert confirmation = driverfactory.getDriver().switchTo().alert();
 			String alerttext = confirmation.getText();
 			System.out.println(alerttext);
 			confirmation.accept();
@@ -160,7 +160,7 @@ public class Array_PF {
 	}
 
 	public void enterCodeInEditor(String code) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driverfactory.getDriver();
 		js.executeScript("document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);", code);
 	}
 	public void clickSearchTheArray() {
@@ -180,7 +180,7 @@ public class Array_PF {
 	}
 
 	public String getValidationMessage(WebElement element) {
-		return (String) ((org.openqa.selenium.JavascriptExecutor) driver)
+		return (String) ((org.openqa.selenium.JavascriptExecutor) driverfactory.getDriver())
 				.executeScript("return arguments[0].validationMessage;", element);
 	}
 	

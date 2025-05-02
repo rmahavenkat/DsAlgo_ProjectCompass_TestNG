@@ -15,29 +15,29 @@ public class driverfactory {
 	private static ThreadLocal<WebDriver> ThreadLocalDriver = new ThreadLocal<>();
 
 	// Intialize the webdriver instance based on the browser name
-	public static WebDriver initdriver(String browser) {
-		WebDriver driver;
+	public static void initdriver(String browser) {
+	
 		switch (browser.toLowerCase()) {
 		case "chrome":
 			LoggerReader.info("chrome intialized");
-			driver = new ChromeDriver();
+			ThreadLocalDriver.set(new ChromeDriver());
 			break;
 		case "edge":
 			LoggerReader.info("Edge intialized");
-			driver = new EdgeDriver();
+			ThreadLocalDriver.set(new EdgeDriver());
 			break;
 		case "firefox":
 			LoggerReader.info("firefox intialized");
-			driver = new FirefoxDriver();
+			ThreadLocalDriver.set(new FirefoxDriver());
 			break;
 		default:
 			throw new IllegalArgumentException("Unsupported browser: " + browser);
 		}
 
-		ThreadLocalDriver.set(driver);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		return driver;
+		
+		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
 	}
 
 	// Access Drivers in tests

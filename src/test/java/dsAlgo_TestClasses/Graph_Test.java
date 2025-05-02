@@ -16,29 +16,29 @@ public class Graph_Test extends Base_class {
 		graph = new Graph_PF();
 	}
 
-	@Test(priority = 0, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 0, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void clickgetstartedbutton() {
 		graph.clickGetStartButton();
 	}
 
-	@Test(priority = 1, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 1, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void clickGraphlink() {
 		graph.clickgraph();
 	}
 
-	@Test(priority = 2, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 2, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void clicktryhere() {
 		graph.clickTryHereButton();
 	}
 
-	@Test(priority = 3, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 3, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void runEmptyEditor() {
 		graph.clickRunButton();
 		graph.alertmessage();
 		graph.navigateBack();
 	}
 
-	@Test(priority = 4, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 4, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void runInvalidCode(String invalidcode) throws InterruptedException {
 		graph.clickTryHereButton();
 		graph.enterText(invalidcode);
@@ -47,7 +47,7 @@ public class Graph_Test extends Base_class {
 		graph.navigateBack();
 	}
 
-	@Test(priority = 5, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 5, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void runvalidCode(String validcode) throws InterruptedException {
 		graph.clickTryHereButton();
 		graph.enterText(validcode);
@@ -56,13 +56,13 @@ public class Graph_Test extends Base_class {
 		graph.navigateBack();
 	}
 
-	@Test(priority = 6, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 6, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void practiceques() {
 		graph.clickPracticeQues();
 		graph.navigateBack();
 	}
 
-	@Test(priority = 7, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 7, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void clickGraphRepresentationlink() {
 		graph.clickGraphRepresentaion();
 		clicktryhere();
@@ -70,7 +70,7 @@ public class Graph_Test extends Base_class {
 
 	}
 
-	@Test(priority = 8, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 8, dataProvider = "invalidpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void runInvalidCodeGraphRep(String invalidcode) throws InterruptedException {
 		graph.clickTryHereButton();
 		graph.enterText(invalidcode);
@@ -79,7 +79,7 @@ public class Graph_Test extends Base_class {
 		graph.navigateBack();
 	}
 
-	@Test(priority = 9, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 9, dataProvider = "validpythonCode", dataProviderClass = ExcelReader.class, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void runvalidCodeGraphRep(String validcode) throws InterruptedException {
 		graph.clickTryHereButton();
 		graph.enterText(validcode);
@@ -89,7 +89,7 @@ public class Graph_Test extends Base_class {
 
 	}
 
-	@Test(priority = 10, groups = "GraphGroup", dependsOnGroups = "linkedlistGroup", alwaysRun = true)
+	@Test(priority = 10, groups = "GraphGroup", dependsOnGroups = "queue", alwaysRun = true)
 	public void practicequesGraphRep() {
 		graph.clickPracticeQues();
 		graph.homeurl();

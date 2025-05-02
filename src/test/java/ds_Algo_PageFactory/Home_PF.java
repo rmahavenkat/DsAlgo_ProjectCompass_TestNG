@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import dsAlgo_DriverFactory.driverfactory;
 
 public class Home_PF {
-	WebDriver driver = driverfactory.getDriver();
+	
 
 	public Home_PF() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driverfactory.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//div[@class='content']/a/button[text()='Get Started']")

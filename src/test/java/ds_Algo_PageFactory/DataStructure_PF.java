@@ -12,10 +12,10 @@ import dsAlgo_Utilities.ConfigReader;
 
 public class DataStructure_PF {
 
-	WebDriver driver = driverfactory.getDriver();
+	
 
 	public DataStructure_PF() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driverfactory.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//*[text()='Data Structures-Introduction']/../a")
@@ -62,7 +62,7 @@ public class DataStructure_PF {
 	public void alertmessage() {
 
 		try {
-			Alert confirmation = driver.switchTo().alert();
+			Alert confirmation = driverfactory.getDriver().switchTo().alert();
 			String alerttext = confirmation.getText();
 			System.out.println(alerttext);
 			confirmation.accept();
@@ -76,12 +76,12 @@ public class DataStructure_PF {
 	}
 
 	public void navigateBack() {
-		driver.navigate().back();
+		driverfactory.getDriver().navigate().back();
 	}
 
 	public void homeurl() {
 		String url = ConfigReader.getConfig("homepageurl");
-		driver.navigate().to(url);
+		driverfactory.getDriver().navigate().to(url);
 	}
 
 }
